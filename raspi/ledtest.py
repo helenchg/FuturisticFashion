@@ -17,6 +17,9 @@ GPIO.setup(GREEN, GPIO.OUT) #set pin 13 as output
 GPIO.output(GREEN, 1)
 GPIO.setup(BLUE, GPIO.OUT) #set pin 17 as output
 GPIO.output(BLUE, 1)
+pwmR = GPIO.PWM(RED, 10)
+pwmG = GPIO.PWM(GREEN, 10)
+pwmB = GPIO.PWM(BLUE, 10)
 
 try:
 	while(True):
@@ -27,9 +30,9 @@ try:
 			GPIO.output(RED, int(request[0])) # storing the first digit 
 			GPIO.output(GREEN, int(request[1])) # storing the second digit 
 			GPIO.output(BLUE, int(request[2])) # storing the third digit 
-			pwmR = GPIO.PWM(RED, pwm)
-			pwmG = GPIO.PWM(GREEN, pwm)
-			pwmB = GPIO.PWM(BLUE, pwm)
+			pwmR.start(pwm)
+			pwmG.start(pwm)
+			pwmB.start(pwm)
 			time.sleep(3)
 
 
