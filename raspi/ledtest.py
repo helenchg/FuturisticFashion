@@ -3,6 +3,7 @@ import time
 
 # Setup GPIO using board numbering
 GPIO.setmode(GPIO.BOARD)
+GPIO.setwarnings(False)
 
 # Declare variables
 RED = 11
