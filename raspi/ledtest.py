@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import time
+from 
 
 # Setup GPIO using board numbering
 GPIO.setmode(GPIO.BCM)
@@ -22,10 +23,17 @@ try:
 	while(True):
 		### Simple RGB LED Strip test
 		request = raw_input("RGB: ")
+		pwm = raw_input("Brightness: ")
 		if (len(request) ==3):
 			GPIO.output(RED, int(request[0])) # storing the first digit 
 			GPIO.output(GREEN, int(request[1])) # storing the second digit 
 			GPIO.output(BLUE, int(request[2])) # storing the third digit 
+			pwmR = GPIO.PWM(RED, pwm)
+			pwmG = GPIO.PWM(GREEN, pwm)
+			pwmB = GPIO.PWM(BLUE, pwm)
+			time.sleep(3)
+
+
 
 except KeyboardInterrupt:
 	GPIO.cleanup()
