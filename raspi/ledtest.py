@@ -2,13 +2,13 @@ import RPi.GPIO as GPIO
 import time
 
 # Setup GPIO using board numbering
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 # Declare variables
-RED = 11
-GREEN = 13
-BLUE = 17
+RED = 17
+GREEN = 27
+BLUE = 22
 
 # Main function
 GPIO.setup(RED, GPIO.OUT) #set pin 11 as output
