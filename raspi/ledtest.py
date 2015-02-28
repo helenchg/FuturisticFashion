@@ -10,11 +10,11 @@ GREEN = 13
 BLUE = 17
 
 # Main function
-GPIO.setup(RED, GPIO.output) #set pin 11 as output
+GPIO.setup(RED, GPIO.OUT) #set pin 11 as output
 GPIO.output(RED, 1)
-GPIO.setup(GREEN, GPIO.output) #set pin 13 as output
+GPIO.setup(GREEN, GPIO.OUT) #set pin 13 as output
 GPIO.output(GREEN, 1)
-GPIO.setup(BLUE, GPIO.output) #set pin 17 as output
+GPIO.setup(BLUE, GPIO.OUT) #set pin 17 as output
 GPIO.output(BLUE, 1)
 
 try:
