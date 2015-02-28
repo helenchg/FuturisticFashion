@@ -1,6 +1,5 @@
 import RPi.GPIO as GPIO
 import time
-from 
 
 # Setup GPIO using board numbering
 GPIO.setmode(GPIO.BCM)
