@@ -29,30 +29,30 @@ pwmG.start(0)
 pwmB.start(0)
 
 
-# try:
-# 	while(True):
-# 		### Simple RGB LED Strip test
-# #		request = raw_input("RGB: ")
-# #		dc = raw_input("Brightness: ")
-# #		if (len(request) ==3):
-# #			GPIO.output(RED, int(request[0])) # storing the first digit 
-# #			GPIO.output(GREEN, int(request[1])) # storing the second digit 
-# #			GPIO.output(BLUE, int(request[2])) # storing the third digit 
+try:
+	while(True):
+		### Simple RGB LED Strip test
+#		request = raw_input("RGB: ")
+#		dc = raw_input("Brightness: ")
+#		if (len(request) ==3):
+#			GPIO.output(RED, int(request[0])) # storing the first digit 
+#			GPIO.output(GREEN, int(request[1])) # storing the second digit 
+#			GPIO.output(BLUE, int(request[2])) # storing the third digit 
 
-# 			for i in range (steps):				# make LED brighter in 100 steps
-# 				pwmR.ChangeDutyCycle(i)
-# 				time.sleep(time_delay) 				# every time, on for 20ms. To make sure the LED has enough time to perform change
+			# for i in range (steps):				# make LED brighter in 100 steps
+			# 	pwmR.ChangeDutyCycle(i)
+			# 	time.sleep(time_delay) 				# every time, on for 20ms. To make sure the LED has enough time to perform change
 			
-# 			# for i in range(steps):				# make LED dimmer in 100 steps
-# 			# 	pwmR.ChangeDutyCycle(steps-i)
-# 			# 	time.sleep(time_delay)
+			# for i in range(steps):				# make LED dimmer in 100 steps
+			# 	pwmR.ChangeDutyCycle(steps-i)
+			# 	time.sleep(time_delay)
 
 
 
-# except KeyboardInterrupt:
-# 	pass
-# pwmR.stop()
-# pwmG.stop()
-# pwmB.stop()
-# GPIO.cleanup() #reset GPIO pin to whatever it is defauld
+except KeyboardInterrupt:
+	pass
+pwmR.stop()
+pwmG.stop()
+pwmB.stop()
+GPIO.cleanup() #reset GPIO pin to whatever it is defauld
 
