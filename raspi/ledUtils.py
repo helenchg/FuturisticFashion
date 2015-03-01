@@ -45,8 +45,6 @@ def init_LEDs():
 	pwmG.start(DUTY_CYCLE)
 	pwmB.start(DUTY_CYCLE)
 	
-	print 'Everything here has finished running'
-	
 def all_LEDs_on():
 	GPIO.output(RED_PIN, 1)
 	GPIO.output(GREEN_PIN, 1)
@@ -57,6 +55,12 @@ def all_LEDs_off():
 	GPIO.output(GREEN_PIN, 0)
 	GPIO.output(BLUE_PIN, 0)
 	
+# Removing all blinking
+def all_LEDs_steady():
+	setRedDutyCycle(100)
+	setBlueDutyCycle(100)
+	setGreenDutyCycle(100)
+
 def cleanUp():
 	try:
 		all_LEDs_off()
