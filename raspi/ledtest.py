@@ -39,9 +39,10 @@ while True:
 	except KeyboardInterrupt:
 		break
 
-pwmR.stop()
-pwmG.stop()
-pwmB.stop()
+GPIO.output(RED, 0)
+# pwmR.stop()
+# pwmG.stop()
+# pwmB.stop()
 GPIO.cleanup() #reset GPIO pin to whatever it is defauld
 
 
