@@ -11,7 +11,7 @@ GREEN = 27
 BLUE = 22
 HERTZ = 50 # this is high enough to not see the LED blinking
 time_delay = 0.02 # three seconds delay
-steps = 255
+steps = 100
 
 # Main function
 GPIO.setup(RED, GPIO.OUT) #set pin 11 as output
@@ -32,12 +32,12 @@ pwmB.start(0)
 try:
 	while(True):
 		### Simple RGB LED Strip test
-		request = raw_input("RGB: ")
+#		request = raw_input("RGB: ")
 #		dc = raw_input("Brightness: ")
-		if (len(request) ==3):
-			GPIO.output(RED, int(request[0])) # storing the first digit 
-			GPIO.output(GREEN, int(request[1])) # storing the second digit 
-			GPIO.output(BLUE, int(request[2])) # storing the third digit 
+#		if (len(request) ==3):
+#			GPIO.output(RED, int(request[0])) # storing the first digit 
+#			GPIO.output(GREEN, int(request[1])) # storing the second digit 
+#			GPIO.output(BLUE, int(request[2])) # storing the third digit 
 #			pwmR.start(float(dc))
 #			pwmG.start(float(dc))
 #			pwmB.start(float(dc))
