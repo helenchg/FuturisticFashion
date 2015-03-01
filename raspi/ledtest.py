@@ -9,7 +9,7 @@ GPIO.setwarnings(False)
 RED = 17
 GREEN = 27
 BLUE = 22
-HERTZ = 100 # this is high enough to not see the LED blinking
+HERTZ = 255 # this is high enough to not see the LED blinking
 time_delay = 0.02 # three seconds delay
 steps = 100
 
@@ -47,7 +47,7 @@ try:
 				time.sleep(time_delay) 				# every time, on for 20ms. To make sure the LED has enough time to perform change
 			
 			for i in range(steps):				# make LED dimmer in 100 steps
-				pwmR.ChangeDutyCycle(100-i)
+				pwmR.ChangeDutyCycle(steps-i)
 				time.sleep(time_delay)
 
 
