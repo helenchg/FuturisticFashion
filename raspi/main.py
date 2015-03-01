@@ -45,7 +45,7 @@ while True:
 	except KeyboardInterrupt:
 		break
 	except:
-		print 'An error occured: ', sys.exc_info()[0]
+		print 'An error occured: ', sys.exc_info()
 		continue
 
 # clean up
