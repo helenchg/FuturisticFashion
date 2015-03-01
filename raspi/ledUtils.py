@@ -8,7 +8,7 @@ GREEN_PIN = 13
 BLUE_PIN = 15
 
 HERTZ = 1
-DUTY_CYCLE = 100 # in percentage; 0-100
+DUTY_CYCLE = 1 # in percentage; 0-100
 
 # Initial output values
 RED_INIT = 1
@@ -39,6 +39,8 @@ def init_LEDs():
 	pwmR.start(DUTY_CYCLE)
 	pwmG.start(DUTY_CYCLE)
 	pwmB.start(DUTY_CYCLE)
+	
+	print 'Everything here has finished running'
 	
 def all_LEDs_on():
 	GPIO.output(RED_PIN, 1)
@@ -76,7 +78,7 @@ def setBlueFrequency(freq):
 
 def setBlueDutyCycle(dutyCycle):
 	pwmB.ChangeDutyCycle(dutyCycle)
-	
+
 init_LEDs()
 time.sleep(4)
 cleanUp()
