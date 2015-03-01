@@ -32,9 +32,9 @@ def init_LEDs():
 	GPIO.output(GREEN_PIN, BLUE_INIT) # storing the second digit 
 	GPIO.output(BLUE_PIN, GREEN_INIT) # storing the third digit
 	
-	pwmR = GPIO.PWM(RED, HERTZ)
-	pwmG = GPIO.PWM(GREEN, HERTZ)
-	pwmB = GPIO.PWM(BLUE, HERTZ)
+	pwmR = GPIO.PWM(RED_PIN, HERTZ)
+	pwmG = GPIO.PWM(GREEN_PIN, HERTZ)
+	pwmB = GPIO.PWM(BLUE_PIN, HERTZ)
 	
 	pwmR.start(DUTY_CYCLE)
 	pwmG.start(DUTY_CYCLE)
