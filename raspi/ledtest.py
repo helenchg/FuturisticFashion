@@ -40,7 +40,7 @@ try:
 #			GPIO.output(BLUE, int(request[2])) # storing the third digit 
 
 			for i in range (steps):				# make LED brighter in 100 steps
-				pwmR.ChangeDutyCycle(i/100)
+				pwmR.ChangeDutyCycle(i)
 				time.sleep(time_delay) 				# every time, on for 20ms. To make sure the LED has enough time to perform change
 			
 			# for i in range(steps):				# make LED dimmer in 100 steps
