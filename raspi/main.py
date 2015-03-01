@@ -25,6 +25,8 @@ while True:
 		if data['handcount'] == 0:
 			print 'No hands were detected. Please try again.'
 		elif data['swipegesture'] == 1:
+			print 'SWIPE', modeIdx
+			print (modeIdx + 1) % nModes
 			modeIdx = (modeIdx + 1) % nModes
 			currMode = modes[modesIdx]
 			print 'Entering mode: ', currMode.name
