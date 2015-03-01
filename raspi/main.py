@@ -13,7 +13,6 @@ nModes = len(modes)
 modeIdx = 0;
 currMode = modes[modeIdx]
 
-
 ledUtils.init_LEDs()
 
 while True:
@@ -29,7 +28,7 @@ while True:
 			currMode = modes[modesIdx]
 			print 'Entering mode: ', currMode.name
 		else:
-			print 'in here'
+			print currMode
 			currMode.process(data)
 	except KeyboardInterrupt:
 		break
