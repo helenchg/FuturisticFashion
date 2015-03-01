@@ -20,9 +20,9 @@ GPIO.setup(GREEN, GPIO.OUT) #set pin 13 as output
 GPIO.output(GREEN, 1)
 GPIO.setup(BLUE, GPIO.OUT) #set pin 17 as output
 GPIO.output(BLUE, 1)
-pwmR = GPIO.PWM(RED, 50) 
-pwmG = GPIO.PWM(GREEN, 50)
-pwmB = GPIO.PWM(BLUE, 50)
+pwmR = GPIO.PWM(RED, HERTZ) 
+pwmG = GPIO.PWM(GREEN, HERTZ)
+pwmB = GPIO.PWM(BLUE, HERTZ)
 
 pwmR.start(1.0) #make sure pwm is off in the begining 
 pwmG.start(0)
@@ -45,7 +45,7 @@ try:
 			for i in range (11):				# make LED brighter in 100 steps
 				print i;
 				pwmR.ChangeDutyCycle(10.0 * i)
-				time.sleep(3); 				# every time, on for 20ms. To make sure the LED has enough time to perform change
+				# time.sleep(3); 				# every time, on for 20ms. To make sure the LED has enough time to perform change
 			
 			# for i in range(steps):				# make LED dimmer in 100 steps
 			# 	pwmR.ChangeDutyCycle(steps-i)
