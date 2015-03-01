@@ -6,9 +6,15 @@ import dataProcessors
 # vars
 url = 'http://leapfashion.herokuapp.com/api/bigdata'
 
-#initialize things
+modes = []
+modes.append(dataProcessors.PinchColor())
+modes.append(dataProcessors.WhiteOrBlue())
+nModes = len(modes)
+modeIdx = 0;
+currMode = modes[modeIdx]
+
+
 ledUtils.init_LEDs()
-processor = dataProcessors.WhiteOrBlue()
 
 while True:
 
@@ -16,7 +22,14 @@ while True:
 		response = urllib.urlopen(url).read()
 		# print response
 		data = json.loads(response)['bigdata']
-		processor.process(data)
+		if data['handcount'] == 0:
+			print 'No hands were detected. Please try again.'
+		elif data['swipegesture'] == 1:
+			modeIdx = (modeIdx + 1) % nModes
+			currMode = modes[modesIdx]
+			print 'Entering mode: ', currMode.name
+		else:
+			currMode.process(data)
 	except KeyboardInterrupt:
 		break
 	except:
