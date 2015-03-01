@@ -26,6 +26,7 @@ while True:
 		response = urllib.urlopen(url).read()
 		# print response
 		data = json.loads(response)['bigdata']
+		print data
 		
 		if data['grabstrength'] > grabThreshold:
 			grabCounter += 1
