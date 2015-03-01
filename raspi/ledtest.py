@@ -43,14 +43,13 @@ try:
 #			pwmB.start(float(dc))
 #			time.sleep(time_delay)
 			for i in range (steps):				# make LED brighter in 100 steps
-				dc = pwmR.ChangeDutyCycle(i)
-				pwmR.start(float(dc))
+				#dc = pwmR.ChangeDutyCycle(i)
+				pwmR.start(float(pwmR.ChangeDutyCycle(i)))
 				time.sleep(time_delay) 				# every time, on for 20ms. To make sure the LED has enough time to perform change
 			
 			for i in range(steps):				# make LED dimmer in 100 steps
-				pwmR.ChangeDutyCycle(steps-i)
-				dc = pwmR.ChangeDutyCycle(steps-i)
-				pwmR.start(float(dc))
+				#pwmR.ChangeDutyCycle(steps-i)
+				pwmR.start(float(pwmR.ChangeDutyCycle(steps-i)))
 				time.sleep(time_delay)
 
 
