@@ -34,9 +34,7 @@ class WhiteOrBlue:
 	def process(self, data):
 		yLeft = float(data['yl'])
 		yRight = float(data['yr'])
-		print data['xl'], data['xr']
 		print yLeft, yRight
-		print data['zl'], data['zr']
 		
 		if (yLeft >= yRight):
 			# blink blue and nothing
