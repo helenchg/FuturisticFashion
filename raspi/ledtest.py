@@ -10,7 +10,7 @@ RED = 17
 GREEN = 27
 BLUE = 22
 HERTZ = 10 # this is high enough to not see the LED blinking
-time_delay = 0.002 # three seconds delay
+time_delay = 0.02 # three seconds delay
 steps = 100
 
 # Main function
@@ -43,9 +43,9 @@ try:
 				pwmR.ChangeDutyCycle(i/100)
 				time.sleep(time_delay) 				# every time, on for 20ms. To make sure the LED has enough time to perform change
 			
-			for i in range(steps):				# make LED dimmer in 100 steps
-				pwmR.ChangeDutyCycle(steps-i)
-				time.sleep(time_delay)
+			# for i in range(steps):				# make LED dimmer in 100 steps
+			# 	pwmR.ChangeDutyCycle(steps-i)
+			# 	time.sleep(time_delay)
 
 
 
