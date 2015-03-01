@@ -28,7 +28,6 @@ while True:
 			currMode = modes[modesIdx]
 			print 'Entering mode: ', currMode.name
 		else:
-			print currMode
 			currMode.process(data)
 	except KeyboardInterrupt:
 		break

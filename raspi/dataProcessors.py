@@ -25,9 +25,7 @@ class PinchColor:
 			ledUtils.turnBlueOn()
 		else:
 			ledUtils.turnBlueOff()
-			
-		print 'Completed'
-			
+						
 class WhiteOrBlue:
 	name = 'White or Blue?'
 	
