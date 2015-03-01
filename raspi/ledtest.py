@@ -22,13 +22,13 @@ GPIO.output(RED, 1) # storing the first digit
 GPIO.output(GREEN, 0) # storing the second digit 
 GPIO.output(BLUE, 0) # storing the third digit 
 
-pwmR = GPIO.PWM(RED, HERTZ) 
-pwmG = GPIO.PWM(GREEN, HERTZ)
-pwmB = GPIO.PWM(BLUE, HERTZ)
+pwmR = GPIO.PWM(RED, 10) 
+pwmG = GPIO.PWM(GREEN, 8)
+pwmB = GPIO.PWM(BLUE, 6)
 
-pwmR.start(1.0) #make sure pwm is off in the begining 
-pwmG.start(0)
-pwmB.start(0)
+pwmR.start(0.5) #make sure pwm is off in the begining 
+pwmG.start(0.5)
+pwmB.start(0.5)
 
 try:
 	while(True):
@@ -54,4 +54,6 @@ pwmR.stop()
 pwmG.stop()
 pwmB.stop()
 GPIO.cleanup() #reset GPIO pin to whatever it is defauld
+
+
 
