@@ -25,9 +25,12 @@ pwmG = GPIO.PWM(GREEN, HERTZ)
 pwmB = GPIO.PWM(BLUE, HERTZ)
 
 pwmR.start(1.0) #make sure pwm is off in the begining 
-# pwmG.start(0)
-# pwmB.start(0)
+pwmG.start(0)
+pwmB.start(0)
 
+GPIO.output(RED, 1) # storing the first digit 
+GPIO.output(GREEN, 0) # storing the second digit 
+GPIO.output(BLUE, 0) # storing the third digit 
 
 try:
 	while(True):
@@ -36,8 +39,8 @@ try:
 #		dc = raw_input("Brightness: ")
 #		if (len(request) ==3):
 			GPIO.output(RED, 1) # storing the first digit 
-			# GPIO.output(GREEN, int(request[1])) # storing the second digit 
-			# GPIO.output(BLUE, int(request[2])) # storing the third digit 
+			GPIO.output(GREEN, 0) # storing the second digit 
+			GPIO.output(BLUE, 0) # storing the third digit 
 
 			for i in range (9):				# make LED brighter in 100 steps
 				pwmR.ChangeDutyCycle(10.0 * i)
