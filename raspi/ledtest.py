@@ -46,9 +46,6 @@ try:
 			# for i in range(steps):				# make LED dimmer in 100 steps
 			# 	pwmR.ChangeDutyCycle(steps-i)
 			# 	time.sleep(time_delay)
-
-
-
 except KeyboardInterrupt:
 	pass
 pwmR.stop()
