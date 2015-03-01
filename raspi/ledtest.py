@@ -32,15 +32,15 @@ try:
 			GPIO.output(RED, int(request[0])) # storing the first digit 
 			GPIO.output(GREEN, int(request[1])) # storing the second digit 
 			GPIO.output(BLUE, int(request[2])) # storing the third digit 
-			pwmR.start(float(dc))
-			pwmG.start(float(dc))
-			pwmB.start(float(dc))
-			time.sleep(time_delay)
+#			pwmR.start(float(dc))
+#			pwmG.start(float(dc))
+#			pwmB.start(float(dc))
+#			time.sleep(time_delay)
 
 
 
 except KeyboardInterrupt:
 	GPIO.cleanup()
-	pwmR.stop()
-	pwmG.stop()
-	pwmB.stop()
+#	pwmR.stop()
+#	pwmG.stop()
+#	pwmB.stop()
