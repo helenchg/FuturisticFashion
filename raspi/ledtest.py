@@ -7,8 +7,8 @@ GPIO.setwarnings(False)
 
 # Declare variables
 RED = 11
-GREEN = 15
-BLUE = 17
+GREEN = 13
+BLUE = 15
 HERTZ = 100.0 # this is high enough to not see the LED blinking
 time_delay = 0.02 # three seconds delay
 steps = 100
