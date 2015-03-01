@@ -32,6 +32,7 @@ while True:
 			if grabCounter >= changeModeThreshold:
 				# fist held for long enough, change mode
 				modeIdx = (modeIdx + 1) % nModes
+				print modeIdx, modes
 				currMode = modes[modesIdx]
 				grabCounter = 0
 				print 'Entering mode: ', currMode.name
