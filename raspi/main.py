@@ -16,7 +16,7 @@ ledUtils.init_LEDs()
 
 # if grabStrength > threshold for changeModeThreshold, change mode
 changeModeThreshold = 8
-grabThreshold = 0.9
+grabThreshold = 0.95
 grabCounter = 0
 
 while True:
@@ -25,19 +25,19 @@ while True:
 		response = urllib.urlopen(url).read()
 		# print response
 		data = json.loads(response)['bigdata']
-		print data
 		
-		if data['grabstrength'] > grabThreshold:
+		if data['handcount'] == 0:
+			print 'No hands were detected. Please try again.'
+		elif data['grabstrength'] > grabThreshold:
+			all_LEDs_on()
+			all_LEDs_steady()
 			grabCounter += 1
 			if grabCounter >= changeModeThreshold:
 				# fist held for long enough, change mode
 				modeIdx = (modeIdx + 1) % nModes
-				print modeIdx, modes
 				currMode = modes[modeIdx]
 				grabCounter = 0
 				print 'Entering mode: ', currMode.name
-		if data['handcount'] == 0:
-			print 'No hands were detected. Please try again.'
 		else:
 			currMode.process(data)
 
