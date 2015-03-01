@@ -1,8 +1,8 @@
 import ledUtils
 
 class PinchColor:
-	self.name = 'Pinch Color'
-	self.interval = 0.125 # 1/8; because 8 colors are available
+	name = 'Pinch Color'
+	interval = 0.125 # 1/8; because 8 colors are available
 	
 	# hue depends on pinch strength
 	def process(self, data):
@@ -28,7 +28,7 @@ class PinchColor:
 			ledUtils.turnBlueOff()
 			
 class WhiteOrBlue:
-	self.name = 'White or Blue?'
+	name = 'White or Blue?'
 	
 	# blink blue/null vs. white/gold depending on relative heights of hands
 	def process(self, data):
