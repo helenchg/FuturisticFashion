@@ -1,3 +1,4 @@
+import json
 import urllib
 import ledUtils
 
@@ -10,12 +11,9 @@ ledUtils.init_LEDs()
 while True:
 	try:
 		response = urllib.urlopen(url).read()
-		print response
-		print json.loads(response)
+		# print response
 		
 		data = json.loads(response)['data']
-		print data
-		print data['brightness']
 		color = int(data['brightness'] / interval)
 		print color
 		redOn = color / 4
@@ -44,4 +42,4 @@ while True:
 		continue
 
 # clean up
-cleanUp()
+ledUtils.cleanUp()
