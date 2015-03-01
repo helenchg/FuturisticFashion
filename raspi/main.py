@@ -31,7 +31,7 @@ while True:
 		else:
 			ledUtils.turnBlueOff()
 			
-	except KeyboardError:
+	except KeyboardInterrupt:
 		break
 	except:
 		continue
