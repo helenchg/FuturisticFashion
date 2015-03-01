@@ -20,9 +20,9 @@ GPIO.setup(GREEN, GPIO.OUT) #set pin 13 as output
 GPIO.output(GREEN, 1)
 GPIO.setup(BLUE, GPIO.OUT) #set pin 17 as output
 GPIO.output(BLUE, 1)
-pwmR = GPIO.PWM(RED, HERTZ) 
-pwmG = GPIO.PWM(GREEN, HERTZ)
-pwmB = GPIO.PWM(BLUE, HERTZ)
+pwmR = GPIO.PWM(RED, 50) 
+pwmG = GPIO.PWM(GREEN, 50)
+pwmB = GPIO.PWM(BLUE, 50)
 
 pwmR.start(1.0) #make sure pwm is off in the begining 
 pwmG.start(0)
