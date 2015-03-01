@@ -35,6 +35,7 @@ while True:
 	except KeyboardInterrupt:
 		break
 	except:
+		print 'An error occured'
 		continue
 
 # clean up
