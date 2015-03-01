@@ -14,6 +14,7 @@ while True:
 		
 		data = json.loads(response)['data']
 		print data
+		print data['brightness']
 		color = int(data['brightness'] / interval)
 		print color
 		redOn = color / 4
