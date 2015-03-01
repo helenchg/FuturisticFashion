@@ -6,8 +6,10 @@ class PinchColor:
 	
 	# hue depends on pinch strength
 	def process(self, data):
+		print data['pinchstrength']
+		print interval
 		color = int(data['pinchstrength'] / interval)
-		# print color
+		print color
 		redOn = color / 4 # MSB
 		greenOn = (color % 4) / 2 # middle bit
 		blueOn = (color % 2) # LSB
