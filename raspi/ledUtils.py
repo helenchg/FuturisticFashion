@@ -22,7 +22,7 @@ pwmB = None
 
 def init_LEDs():
 	GPIO.setmode(GPIO.BOARD)
-	GPIO.setwarnings(False)
+	# GPIO.setwarnings(False)
 	
 	GPIO.setup(RED_PIN, GPIO.OUT)
 	GPIO.setup(GREEN_PIN, GPIO.OUT)
@@ -80,7 +80,7 @@ def setBlueDutyCycle(dutyCycle):
 	pwmB.ChangeDutyCycle(dutyCycle)
 
 init_LEDs()
-time.sleep(4)
+time.sleep(10)
 cleanUp()
 
 # while True:
