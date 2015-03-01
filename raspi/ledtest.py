@@ -18,9 +18,9 @@ GPIO.setup(RED, GPIO.OUT) #set pin 11 as output
 GPIO.setup(GREEN, GPIO.OUT) #set pin 13 as output
 GPIO.setup(BLUE, GPIO.OUT) #set pin 17 as output
 
-GPIO.output(RED, 1) # storing the first digit 
+GPIO.output(RED, 0) # storing the first digit 
 GPIO.output(GREEN, 0) # storing the second digit 
-GPIO.output(BLUE, 0) # storing the third digit 
+GPIO.output(BLUE, 1) # storing the third digit 
 
 # pwmR = GPIO.PWM(RED, 1) 
 # pwmG = GPIO.PWM(GREEN, HERTZ)
@@ -32,14 +32,14 @@ GPIO.output(BLUE, 0) # storing the third digit
 
 while True:
 	try:
-		GPIO.output(RED, 1)
+		GPIO.output(BLUE, 1)
 		time.sleep(0.01)
-		GPIO.output(RED, 0)
+		GPIO.output(BLUE, 0)
 		time.sleep(0.01)
 	except KeyboardInterrupt:
 		break
 
-GPIO.output(RED, 0)
+GPIO.output(BLUE, 0)
 # pwmR.stop()
 # pwmG.stop()
 # pwmB.stop()
