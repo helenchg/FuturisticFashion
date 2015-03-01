@@ -10,7 +10,7 @@ RED = 17
 GREEN = 27
 BLUE = 22
 HERTZ = 60 # this is high enough to not see the LED blinking
-time_delay = 0.02 # three seconds delay
+time_delay = 0.01 # three seconds delay
 steps = 255
 
 # Main function
