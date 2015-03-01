@@ -10,7 +10,7 @@ RED = 17
 GREEN = 27
 BLUE = 22
 HERTZ = 10 # this is high enough to not see the LED blinking
-time_delay = 0.01 # three seconds delay
+time_delay = 0.002 # three seconds delay
 steps = 100
 
 # Main function
@@ -38,12 +38,9 @@ try:
 #			GPIO.output(RED, int(request[0])) # storing the first digit 
 #			GPIO.output(GREEN, int(request[1])) # storing the second digit 
 #			GPIO.output(BLUE, int(request[2])) # storing the third digit 
-#			pwmR.start(float(dc))
-#			pwmG.start(float(dc))
-#			pwmB.start(float(dc))
-#			time.sleep(time_delay)
+
 			for i in range (steps):				# make LED brighter in 100 steps
-				pwmR.ChangeDutyCycle(i)
+				pwmR.ChangeDutyCycle(i/100)
 				time.sleep(time_delay) 				# every time, on for 20ms. To make sure the LED has enough time to perform change
 			
 			for i in range(steps):				# make LED dimmer in 100 steps
