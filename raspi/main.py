@@ -15,7 +15,7 @@ currMode = modes[modeIdx]
 print modes[0]
 print modes[1]
 modeIdx = (modeIdx + 1) % nModes
-currMode = modes[modesIdx
+currMode = modes[modesIdx]
 
 modeIdx = (modeIdx + 1) % nModes
 currMode = modes[modesIdx]
