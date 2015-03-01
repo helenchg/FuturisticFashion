@@ -1,40 +1,22 @@
 import json
 import urllib
 import ledUtils
+import dataProcessors
 
 # vars
-url = 'http://leapfashion.herokuapp.com/api/data'
-interval = 255 / 8
+url = 'http://leapfashion.herokuapp.com/api/bigdata'
 
+#initialize things
 ledUtils.init_LEDs()
+processor = dataProcessors.WhiteOrBlue()
 
 while True:
+
 	try:
 		response = urllib.urlopen(url).read()
 		# print response
-		
-		data = json.loads(response)['data']
-		color = int(data['brightness'] / interval)
-		print color
-		redOn = color / 4
-		greenOn = (color % 4) / 2
-		blueOn = (color % 2)
-		
-		if redOn:
-			ledUtils.turnRedOn()
-		else:
-			ledUtils.turnRedOff()
-			
-		if greenOn:
-			ledUtils.turnGreenOn()
-		else:
-			ledUtils.turnGreenOff()
-			
-		if blueOn:
-			ledUtils.turnBlueOn()
-		else:
-			ledUtils.turnBlueOff()
-			
+		data = json.loads(response)['bigdata']
+		processor.process(data)
 	except KeyboardInterrupt:
 		break
 	except:
