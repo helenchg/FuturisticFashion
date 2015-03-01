@@ -12,6 +12,7 @@ while True:
 		response = urllib.urlopen(url).read()
 		data = json.loads(response)['data']
 		color = data['brightness'] / interval
+		print color
 		redOn = color / 4
 		greenOn = (color % 4) / 2
 		blueOn = (color % 2)
