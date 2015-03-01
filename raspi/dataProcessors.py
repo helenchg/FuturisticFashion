@@ -32,10 +32,10 @@ class WhiteOrBlue:
 	
 	# blink blue/null vs. white/gold depending on relative heights of hands
 	def process(self, data):
-		zLeft = float(data['zl'])
-		zRight = float(data['zr'])
+		yLeft = float(data['yl'])
+		yRight = float(data['yr'])
 		
-		if (zLeft > zRight):
+		if (yLeft >= yRight):
 			# blink blue and nothing
 			ledUtils.setRedDutyCycle(0)
 			ledUtils.setGreenDutyCycle(0)
