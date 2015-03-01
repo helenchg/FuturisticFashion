@@ -8,7 +8,7 @@ GREEN_PIN = 13
 BLUE_PIN = 15
 
 HERTZ = 1
-DUTY_CYCLE = 1 # in percentage; 0-100
+DUTY_CYCLE = 100 # in percentage; 0-100
 
 # Initial output values
 RED_INIT = 1
@@ -86,6 +86,8 @@ def setBlueDutyCycle(dutyCycle):
 
 init_LEDs()
 time.sleep(10)
+setGreenDutyCycle(50)
+time.sleep(5)
 cleanUp()
 
 # while True:
