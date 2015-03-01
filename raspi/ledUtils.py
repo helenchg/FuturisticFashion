@@ -65,30 +65,58 @@ def cleanUp():
 		pwmB.stop()
 	finally:
 		GPIO.cleanup()
-		
+
+# Functions for red channel
 def setRedFrequency(freq):
 	pwmR.ChangeFrequency(freq)
 
 def setRedDutyCycle(dutyCycle):
 	pwmR.ChangeDutyCycle(dutyCycle)
 	
+def turnRedOff():
+	GPIO.output(RED_PIN, 0)
+	setRedDutyCycle(0)
+
+def turnRedOn():
+	GPIO.output(RED_PIN, 1)
+	setRedDutyCycle(100)
+
+# Functions for green channel
 def setGreenFrequency(freq):
 	pwmG.ChangeFrequency(freq)
 
 def setGreenDutyCycle(dutyCycle):
 	pwmG.ChangeDutyCycle(dutyCycle)
 	
+def turnGreenOff():
+	GPIO.output(GREEN_PIN, 0)
+	setGreenDutyCycle(0)
+
+def turnGreenOn():
+	GPIO.output(GREEN_PIN, 1)
+	setGreenDutyCycle(100)
+
+# Functions for blue channel
 def setBlueFrequency(freq):
 	pwmB.ChangeFrequency(freq)
 
 def setBlueDutyCycle(dutyCycle):
 	pwmB.ChangeDutyCycle(dutyCycle)
+	
+def turnBlueOff():
+	GPIO.output(BLUE_PIN, 0)
+	setBlueDutyCycle(0)
 
-init_LEDs()
-time.sleep(10)
-setGreenDutyCycle(50)
-time.sleep(5)
-cleanUp()
+def turnBlueOn():
+	GPIO.output(BLUE_PIN, 1)
+	setBlueDutyCycle(100)
+
+# test code; uncomment to make sure this works
+# init_LEDs()
+# time.sleep(10)
+# setGreenDutyCycle(50)
+# time.sleep(5)
+# cleanUp()
 
 # while True:
 	# try:
