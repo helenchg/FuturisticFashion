@@ -2,6 +2,7 @@ import json
 import urllib
 import ledUtils
 import dataProcessors
+import sys
 
 # vars
 url = 'http://leapfashion.herokuapp.com/api/bigdata'
