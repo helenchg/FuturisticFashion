@@ -33,7 +33,7 @@ try:
 	while(True):
 		### Simple RGB LED Strip test
 		request = raw_input("RGB: ")
-		dc = raw_input("Brightness: ")
+#		dc = raw_input("Brightness: ")
 		if (len(request) ==3):
 			GPIO.output(RED, int(request[0])) # storing the first digit 
 			GPIO.output(GREEN, int(request[1])) # storing the second digit 
@@ -45,8 +45,9 @@ try:
 			for i in range (steps):				# make LED brighter in 100 steps
 				pwmR.ChangeDutyCycle(i)
 				time.sleep(time_delay) 				# every time, on for 20ms. To make sure the LED has enough time to perform change
+			
 			for i in range(steps):				# make LED dimmer in 100 steps
-				p.ChangeDutyCycle(100-i)
+				pwmR.ChangeDutyCycle(100-i)
 				time.sleep(time_delay)
 
 
