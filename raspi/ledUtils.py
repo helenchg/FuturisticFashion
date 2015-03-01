@@ -77,7 +77,9 @@ def setBlueFrequency(freq):
 def setBlueDutyCycle(dutyCycle):
 	pwmB.ChangeDutyCycle(dutyCycle)
 	
-print 'Everything\'s OK'
+init_LEDs()
+time.sleep(4)
+cleanUp()
 
 # while True:
 	# try:
@@ -87,11 +89,6 @@ print 'Everything\'s OK'
 		# time.sleep(0.01)
 	# except KeyboardInterrupt:
 		# break
-
-# import urllib
-# url = 'http://leapfashion.herokuapp.com/api/data'
-# response = urllib.urlopen(url).read()
-# print response
 
 
 
