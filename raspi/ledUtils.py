@@ -21,6 +21,11 @@ pwmG = None
 pwmB = None
 
 def init_LEDs():
+
+	global pwmR
+	global pwmG
+	global pwmB
+
 	GPIO.setmode(GPIO.BOARD)
 	# GPIO.setwarnings(False)
 	
@@ -32,9 +37,9 @@ def init_LEDs():
 	GPIO.output(GREEN_PIN, BLUE_INIT) # storing the second digit 
 	GPIO.output(BLUE_PIN, GREEN_INIT) # storing the third digit
 	
-	global pwmR = GPIO.PWM(RED_PIN, HERTZ)
-	global pwmG = GPIO.PWM(GREEN_PIN, HERTZ)
-	global pwmB = GPIO.PWM(BLUE_PIN, HERTZ)
+	pwmR = GPIO.PWM(RED_PIN, HERTZ)
+	pwmG = GPIO.PWM(GREEN_PIN, HERTZ)
+	pwmB = GPIO.PWM(BLUE_PIN, HERTZ)
 	
 	pwmR.start(DUTY_CYCLE)
 	pwmG.start(DUTY_CYCLE)
