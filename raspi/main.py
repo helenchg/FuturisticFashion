@@ -21,6 +21,7 @@ while True:
 		response = urllib.urlopen(url).read()
 		# print response
 		data = json.loads(response)['bigdata']
+		print data['swipegesture']
 		if data['handcount'] == 0:
 			print 'No hands were detected. Please try again.'
 		elif data['swipegesture'] == 1:
