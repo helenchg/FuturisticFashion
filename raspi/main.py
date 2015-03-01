@@ -10,7 +10,7 @@ ledUtils.init_LEDs()
 while True:
 	try:
 		response = urllib.urlopen(url).read()
-		# print response
+		print response
 		
 		data = json.loads(response)['data']
 		print data
