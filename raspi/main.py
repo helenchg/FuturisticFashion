@@ -15,23 +15,32 @@ currMode = modes[modeIdx]
 
 ledUtils.init_LEDs()
 
+# if grabStrength > threshold for changeModeThreshold, change mode
+changeModeThreshold = 8
+grabThreshold = 0.6
+grabCounter = 0
+
 while True:
 
 	try:
 		response = urllib.urlopen(url).read()
 		# print response
 		data = json.loads(response)['bigdata']
-		print data['swipegesture']
+		
+		if data['grabstrength'] > grabThreshold:
+			grabCounter += 1
+			if grabCounter >= changeModeThreshold:
+				# fist held for long enough, change mode
+				modeIdx = (modeIdx + 1) % nModes
+				currMode = modes[modesIdx]
+				grabCounter = 0
+				print 'Entering mode: ', currMode.name
+		
 		if data['handcount'] == 0:
 			print 'No hands were detected. Please try again.'
-		elif data['swipegesture'] == 1:
-			print 'SWIPE', modeIdx
-			print (modeIdx + 1) % nModes
-			modeIdx = (modeIdx + 1) % nModes
-			currMode = modes[modesIdx]
-			print 'Entering mode: ', currMode.name
 		else:
 			currMode.process(data)
+
 	except KeyboardInterrupt:
 		break
 	except:
