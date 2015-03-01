@@ -9,7 +9,7 @@ GPIO.setwarnings(False)
 RED = 17
 GREEN = 27
 BLUE = 22
-HERTZ = 50.0 # this is high enough to not see the LED blinking
+HERTZ = 100.0 # this is high enough to not see the LED blinking
 time_delay = 0.02 # three seconds delay
 steps = 100
 
@@ -38,13 +38,14 @@ try:
 		# request = raw_input("RGB: ")
 #		dc = raw_input("Brightness: ")
 #		if (len(request) ==3):
-			GPIO.output(RED, 1) # storing the first digit 
-			GPIO.output(GREEN, 0) # storing the second digit 
-			GPIO.output(BLUE, 0) # storing the third digit 
+			# GPIO.output(RED, 1) # storing the first digit 
+			# GPIO.output(GREEN, 0) # storing the second digit 
+			# GPIO.output(BLUE, 0) # storing the third digit 
 
 			for i in range (9):				# make LED brighter in 100 steps
+				print i;
 				pwmR.ChangeDutyCycle(10.0 * i)
-				time.sleep(1); 				# every time, on for 20ms. To make sure the LED has enough time to perform change
+				time.sleep(3); 				# every time, on for 20ms. To make sure the LED has enough time to perform change
 			
 			# for i in range(steps):				# make LED dimmer in 100 steps
 			# 	pwmR.ChangeDutyCycle(steps-i)
