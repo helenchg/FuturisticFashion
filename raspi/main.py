@@ -2,7 +2,7 @@ import urllib
 import ledUtils
 
 # vars
-url = 'http://leapfashion.herokuapp.com/api/data'
+url = 'http://leapfashion.herokuapp.com/api/bigdata'
 interval = 255 / 8
 
 ledUtils.init_LEDs()
