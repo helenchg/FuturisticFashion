@@ -11,6 +11,7 @@ while True:
 	try:
 		response = urllib.urlopen(url).read()
 		print response
+		print json.loads(response)
 		
 		data = json.loads(response)['data']
 		print data
