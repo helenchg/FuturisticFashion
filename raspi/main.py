@@ -1,10 +1,11 @@
+import urllib
 import ledUtils
 
 # vars
 url = 'http://leapfashion.herokuapp.com/api/data'
 interval = 255 / 8
 
-init_LEDs()
+ledUtils.init_LEDs()
 
 while True:
 	try:
@@ -16,19 +17,20 @@ while True:
 		blueOn = (color % 2)
 		
 		if redOn:
-			turnRedOn()
+			ledUtils.turnRedOn()
 		else:
-			turnRedOff()
+			ledUtils.turnRedOff()
 			
 		if greenOn:
-			turnGreenOn()
+			ledUtils.turnGreenOn()
 		else:
-			turnGreenOff()
+			ledUtils.turnGreenOff()
 			
 		if blueOn:
-			turnBlueOn()
+			ledUtils.turnBlueOn()
 		else:
-			turnBlueOff()
+			ledUtils.turnBlueOff()
+			
 	except KeyboardError:
 		break
 	except:
