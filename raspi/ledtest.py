@@ -42,7 +42,7 @@ try:
 			# GPIO.output(GREEN, 0) # storing the second digit 
 			# GPIO.output(BLUE, 0) # storing the third digit 
 
-			for i in range (9):				# make LED brighter in 100 steps
+			for i in range (11):				# make LED brighter in 100 steps
 				print i;
 				pwmR.ChangeDutyCycle(10.0 * i)
 				time.sleep(3); 				# every time, on for 20ms. To make sure the LED has enough time to perform change
