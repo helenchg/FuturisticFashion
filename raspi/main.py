@@ -29,8 +29,8 @@ while True:
 		if data['handcount'] == 0:
 			print 'No hands were detected. Please try again.'
 		elif data['grabstrength'] > grabThreshold:
-			all_LEDs_on()
-			all_LEDs_steady()
+			ledUtils.all_LEDs_on()
+			ledUtils.all_LEDs_steady()
 			grabCounter += 1
 			if grabCounter >= changeModeThreshold:
 				# fist held for long enough, change mode
