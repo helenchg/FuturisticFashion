@@ -9,7 +9,7 @@ GPIO.setwarnings(False)
 RED = 17
 GREEN = 27
 BLUE = 22
-HERTZ = 255 # this is high enough to not see the LED blinking
+HERTZ = 1000 # this is high enough to not see the LED blinking
 time_delay = 0.02 # three seconds delay
 steps = 100
 
@@ -57,5 +57,5 @@ except KeyboardInterrupt:
 pwmR.stop()
 pwmG.stop()
 pwmB.stop()
-GPIO.cleanup()
+GPIO.cleanup() #reset GPIO pin to whatever it is defauld
 
