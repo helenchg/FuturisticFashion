@@ -11,7 +11,7 @@ GREEN = 27
 BLUE = 22
 HERTZ = 10 # this is high enough to not see the LED blinking
 time_delay = 0.01 # three seconds delay
-steps = 255
+steps = 100
 
 # Main function
 GPIO.setup(RED, GPIO.OUT) #set pin 11 as output
